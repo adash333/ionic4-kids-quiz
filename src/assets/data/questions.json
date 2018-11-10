@@ -1,0 +1,38 @@
+{
+  "questions": [
+
+    {
+      "flashCardFront": "<img src='assets/imgs/helicopter.png' />",
+      "flashCardBack": "ヘリコプター",
+      "flashCardFlipped": false,
+      "questionText": "これはなに？",
+      "answers": [
+        {"answer": "ヘリコプター", "correct": true, "selected": false},
+        {"answer": "ひこうき", "correct": false, "selected": false},
+        {"answer": "トラック", "correct": false, "selected": false}
+      ]
+    },
+    {
+      "flashCardFront": "<img src='assets/imgs/plane.png' />",
+      "flashCardBack": "ひこうき",
+      "flashCardFlipped": false,
+      "questionText": "これはなに？",
+      "answers": [
+        {"answer": "スポーツカー", "correct": false, "selected": false},
+        {"answer": "ひこうき", "correct": true, "selected": false},
+        {"answer": "オートバイ", "correct": false, "selected": false}
+      ]
+    },
+    {
+      "flashCardFront": "<img src='assets/imgs/truck.png' />",
+      "flashCardBack": "トラック",
+      "flashCardFlipped": false,
+      "questionText": "これはなに？",
+      "answers": [
+        {"answer": "ふね", "correct": false, "selected": false},
+        {"answer": "でんしゃ", "correct": false, "selected": false},
+        {"answer": "トラック", "correct": true, "selected": false}
+      ]
+    }
+  ]
+}

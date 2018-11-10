@@ -1,33 +1,32 @@
 <ion-content padding>
-  <ion-slides>
-    <ion-slide>
+  <ion-slides #slides>
 
-      <h3>Question 1</h3>
+    <ion-slide class="start-slide">
+      <h2>Ionic4 Kids Quiz</h2>
+      <ion-button color="primary" (click)="nextSlide()">Start!</ion-button>
+    </ion-slide>
 
+    <ion-slide *ngFor="let question of questions; let i = index;">
+      <h3>Question {{i+1}}</h3>
       <ion-item>
-      <app-flash-card [isFlipped]="flashCardFlipped">
-        <div class="flash-card-front"><img src="assets/imgs/helicopter.png" /></div>
-        <div class="flash-card-back">Helicopter</div>
-      </app-flash-card>
-    </ion-item>
-      
-      <h3>What is this?</h3>
-
+        <app-flash-card [isFlipped]="question.flashCardFlipped">
+          <div class="flash-card-front" [innerHTML]="question.flashCardFront"></div>
+          <div class="flash-card-back" [innerHTML]="question.flashCardBack"></div>
+        </app-flash-card>
+      </ion-item>
+      <h3>{{question.questionText}}</h3>
       <ion-list no-lines radio-group>
-        <ion-item>
-          <ion-label>1. Helicopter</ion-label>
-          <ion-radio (click)="selectAnswer()"></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label>2. Truck</ion-label>
-          <ion-radio (click)="selectAnswer()"></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label>3. Plane</ion-label>
-          <ion-radio (click)="selectAnswer()"></ion-radio>
+        <ion-item *ngFor="let answer of question.answers; let i = index;">
+          <ion-label>{{i+1}}. {{answer.answer}}</ion-label>
+          <ion-radio (click)="selectAnswer(answer, question)" [checked]="answer.selected" [disabled]="hasAnswered"></ion-radio>
         </ion-item>
       </ion-list>
-
     </ion-slide>
+
+    <ion-slide>
+      <h2>Final Score: {{score}}</h2>
+      <ion-button expand="full" (click)="restartQuiz()" color="primary">Start Again</ion-button>
+    </ion-slide>
+
   </ion-slides>
 </ion-content>

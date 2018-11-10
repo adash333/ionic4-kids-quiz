@@ -1,5 +1,5 @@
 ion-slide {
-  align-items: flex-start;
+  //align-items: flex-start;
   display: block
 }
 
@@ -21,9 +21,10 @@ flash-card {
 
 .start-slide {
   justify-content: center;
-  align-items: center;
+  //align-items: center;
 
-  button {
+  ion-button {
+    align-items: center;
     font-size: 1.3em;
     font-weight: bold;
   }

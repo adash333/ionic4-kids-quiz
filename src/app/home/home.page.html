@@ -1,12 +1,33 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
+  <ion-slides>
+    <ion-slide>
+
+      <h3>Question 1</h3>
+
+      <ion-item>
+      <app-flash-card [isFlipped]="flashCardFlipped">
+        <div class="flash-card-front"><img src="assets/imgs/helicopter.png" /></div>
+        <div class="flash-card-back">Helicopter</div>
+      </app-flash-card>
+    </ion-item>
+      
+      <h3>What is this?</h3>
+
+      <ion-list no-lines radio-group>
+        <ion-item>
+          <ion-label>1. Helicopter</ion-label>
+          <ion-radio (click)="selectAnswer()"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>2. Truck</ion-label>
+          <ion-radio (click)="selectAnswer()"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>3. Plane</ion-label>
+          <ion-radio (click)="selectAnswer()"></ion-radio>
+        </ion-item>
+      </ion-list>
+
+    </ion-slide>
+  </ion-slides>
 </ion-content>
